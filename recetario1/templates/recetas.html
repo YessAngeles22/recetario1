@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Recetas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container1">
+        <h1>Mis Recetas</h1>
+        {% if recetas %}
+        <ul>
+            {% for receta in recetas %}
+            <li>
+                <h2>{{ receta.nombre }}</h2>
+                <p><strong>Ingredientes:</strong> {{ receta.ingredientes | join(', ') }}</p>
+                <p><strong>Cantidades:</strong> {{ receta.cantidades | join(', ') }}</p>
+                <p><strong>Modo:</strong> {{ receta.modo }}</p>
+               
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No hay recetas guardadas.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

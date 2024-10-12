@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardar Recetas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Guardar Receta</h1>
+        <form method="POST" action="/agregar_receta" enctype="multipart/form-data">
+            <label for="nombre">Título de la receta</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Título de la receta" required>
+
+            <label for="ingredientes">Ingredientes</label>
+            <input type="text" id="ingredientes" name="ingredientes" placeholder="Ingredientes" required>
+
+            <label for="cantidades">Cantidades</label>
+            <input type="text" id="cantidades" name="cantidades" placeholder="Cantidades" required>
+
+            <label for="modo">Descripción</label>
+            <textarea id="modo" name="modo" placeholder="Descripción del modo de preparación" required></textarea>
+
+            <label for="photo">Seleccionar imagen</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+
+            <button type="submit">Guardar Receta</button>
+        </form>
+    </div>
+</body>
+</html>
